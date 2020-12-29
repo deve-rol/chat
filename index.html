@@ -17,45 +17,5 @@
 <script src="js/ball.js"></script>
 <script src="js/main.js"></script>
     
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyDT9VcvgrM63z53n5lZFGuxh8RJLp2xyTs",
-    authDomain: "chat-e3d40.firebaseapp.com",
-    projectId: "chat-e3d40",
-    storageBucket: "chat-e3d40.appspot.com",
-    messagingSenderId: "157700151251",
-    appId: "1:157700151251:web:fcf49f449c3e5f9a1e4126",
-    measurementId: "G-068VWJWX64"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-    
-    function saveToFirebase(email) {
-    var emailObject = {
-        email: email
-    };
-
-    firebase.database().ref('subscription-entries').push().set(emailObject)
-        .then(function(snapshot) {
-            success(); // some success method
-        }, function(error) {
-            console.log('error' + error);
-            error(); // some error method
-        });
-}
-
-saveToFirebase('roland.simonyan.100@mail.ru');
-</script>
-    
 </body>
 </html>
